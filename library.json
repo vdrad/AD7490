@@ -1,0 +1,19 @@
+{
+    "name": "AD7490",
+    "version": "1.0.0",
+    "description": "Arduino library for AD7490 (12-bit, 16-channel ADC).",
+    "keywords": "AD7490",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/vdrad/AD7490"
+    },
+    "authors": [{
+        "name": "Victor Gomes",
+        "email": "victor.drad.g@gmail.com",
+        "url": "linkedin.com/in/victordeagomes",
+        "maintainer": true
+    }],
+    "license": "MIT",
+    "frameworks": "*",
+    "platforms": "*"
+}
