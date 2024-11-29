@@ -2,7 +2,7 @@
 
 # AD7490
 
-Arduino library for AD7490 (12-bit, 16-channel ADC).
+Arduino library for AD7490 (12-bit, 16-channel ADC with SPI communication).
 
 ## Table of Contents
 

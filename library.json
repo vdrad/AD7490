@@ -1,18 +1,23 @@
 {
     "name": "AD7490",
     "version": "1.0.0",
-    "description": "Arduino library for AD7490 (12-bit, 16-channel ADC).",
+    "description": "Arduino library for AD7490 (12-bit, 16-channel ADC with SPI communication).",
     "keywords": "AD7490",
     "repository": {
         "type": "git",
-        "url": "https://github.com/vdrad/AD7490"
+        "url": "https://github.com/vdrad/AD7490.git"
     },
     "authors": [{
         "name": "Victor Gomes",
         "email": "victor.drad.g@gmail.com",
-        "url": "linkedin.com/in/victordeagomes",
+        "url": "https://www.linkedin.com/in/victordeagomes",
         "maintainer": true
     }],
+    "export": {
+        "exclude":[
+            ".vscode/*"
+        ]
+    },
     "license": "MIT",
     "frameworks": "*",
     "platforms": "*"
