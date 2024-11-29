@@ -19,7 +19,7 @@ void setup() {
     Serial.begin(115200);
 
     Serial.println("Initializing AD7490...");
-    ADC.setAllPins(SLCK_PIN, DOUT_PIN, DIN_PIN, CS_PIN);
+    ADC.setPins(SLCK_PIN, DOUT_PIN, DIN_PIN, CS_PIN);
     ADC.setClockFrequency(CLOCK_FREQUENCY);
     ADC.begin();
     /* Alternatively, you could do:
@@ -30,7 +30,7 @@ void setup() {
         CS_PIN,
         CLOCK_FREQUENCY
     ); */
-   Serial.println("AD7490 successfully configured!");
+    Serial.println("AD7490 successfully configured!");
 }
 
 void loop() {
