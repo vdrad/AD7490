@@ -117,7 +117,7 @@ void loop() {
 
 ### Clock Frequency
 
-The maximum frequency tested was 10 MHz. This doesn't mean it's the maximum frequency that the device can achieve.
+The maximum frequency tested was 10 MHz. This doesn't mean it's the maximum frequency that the device can operate.
 
 ### Development
 
