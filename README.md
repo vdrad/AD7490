@@ -126,8 +126,6 @@ This code was tested on an ESP32-S3-WROOM-N16R0. While it likely contains no ESP
 
 Although it will likely work, I have not tested the library with multiple devices connected, whether multiple AD7490 units or other SPI devices on the same bus.
 
-In further versions, I will implement CR Register manipulation.
-
 ## Additional Information
 To retrieve a reading from AD7490, you have to manipulate its internal Control Register (CR). Data is loaded from DIN pin on the falling edge of SCLK. The control register follows the given arrangement:
 
