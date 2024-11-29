@@ -1,5 +1,6 @@
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
+[![GitHub release](https://img.shields.io/github/release/vdrad/AD7490.svg?maxAge=3600)](https://github.com/vdrad/AD7490/releases)
+[![PlatformIO Registry](https://badges.registry.platformio.org/packages/vdrad/library/AD7490.svg)](https://registry.platformio.org/libraries/vdrad/AD7490)
 # AD7490
 
 Arduino library for AD7490 (12-bit, 16-channel ADC with SPI communication).
