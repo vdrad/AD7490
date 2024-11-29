@@ -100,7 +100,7 @@ class AD7490{
          * @param sclk, din, dout, cs
          * @warning this should be called before begin().
         */
-        void setAllPins(uint8_t sclk, uint8_t din, uint8_t dout, uint8_t cs);
+        void setPins(uint8_t sclk, uint8_t din, uint8_t dout, uint8_t cs);
 
         /** 
          * @brief sets SPI clock frequency.

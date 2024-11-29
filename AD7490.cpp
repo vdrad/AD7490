@@ -105,7 +105,7 @@ void AD7490::setCSPin(uint8_t pin) {
     CSPin = pin;
 }
 
-void AD7490::setAllPins(uint8_t sclk, uint8_t dout, uint8_t din, uint8_t cs) {
+void AD7490::setPins(uint8_t sclk, uint8_t dout, uint8_t din, uint8_t cs) {
     SCLKPin = sclk;
     DOUTPin = dout;
     DINPin  = din;
