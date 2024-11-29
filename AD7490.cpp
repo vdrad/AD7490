@@ -1,6 +1,6 @@
 /**
  * @file  AD7490.cpp
- * @brief Arduino library for AD7490 12-bit, 16-channel ADC.
+ * @brief Arduino library for AD7490 (12-bit, 16-channel ADC).
  * @author Victor Gomes
  */
 
@@ -33,7 +33,7 @@ uint16_t AD7490::read(uint8_t channel) {
 }
 
 void AD7490::validate() {
-    for (uint8_t channel = 0; channel < 15; channel++) {
+    for (uint8_t channel = 0; channel < 16; channel++) {
         uint16_t reading = read(channel);
         Serial.print("CH");
         Serial.print(channel);
@@ -42,7 +42,7 @@ void AD7490::validate() {
         Serial.print("|");
     }
 
-    Serial.println();
+    Serial.println("\n");
 }
 
 uint16_t AD7490::generateCommand(uint8_t address) {

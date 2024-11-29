@@ -1,6 +1,6 @@
 /**
  * @file  AD7490.h
- * @brief Arduino library for AD7490 12-bit, 16-channel ADC.
+ * @brief Arduino library for AD7490 (12-bit, 16-channel ADC).
  * @author Victor Gomes
  */
 
@@ -40,6 +40,7 @@ class AD7490{
         /** 
          * @brief begins SPI communication for AD7490.
          * @warning Make sure to call set pin functions before calling begin().
+         * @warning Make sure to call setClock before calling begin().
         */
         void begin();
         /** 
@@ -62,49 +63,56 @@ class AD7490{
 
         /** 
          * @brief prints AD7490 readings for each channel.
+         * @warning you need to call Serial.begin() first.
         */
         void validate();
 
         /** 
          * @brief sets Clock (SCLK) pin for SPI communication.
          * @param pin
+         * @warning this should be called before begin().
         */
         void setSCLKPin(uint8_t pin);
 
         /** 
          * @brief sets Data In (DIN) pin, i.e data sent TO the AD7490, for SPI communication.
          * @param pin
+         * @warning this should be called before begin().
         */
         void setDINPin(uint8_t pin);
 
         /** 
          * @brief sets Data In (DOUT) pin, i.e data sent FROM the AD7490, for SPI communication.
          * @param pin
+         * @warning this should be called before begin().
         */
         void setDOUTPin(uint8_t pin);
 
         /** 
          * @brief sets Chip Select (CS) pin for SPI communication.
          * @param pin
+         * @warning this should be called before begin().
         */
         void setCSPin(uint8_t pin);
 
         /** 
          * @brief sets all pins for SPI communication.
          * @param sclk, din, dout, cs
+         * @warning this should be called before begin().
         */
         void setAllPins(uint8_t sclk, uint8_t din, uint8_t dout, uint8_t cs);
 
         /** 
          * @brief sets SPI clock frequency.
          * @param frequency
+         * @warning this should be called before begin().
         */
         void setClockFrequency(uint32_t frequency);
-        
+
     private:
         // Variables
-        uint8_t DOUTPin         = DEFAULT_SCLK_PIN;
-        uint8_t SCLKPin         = DEFAULT_DOUT_PIN;
+        uint8_t SCLKPin         = DEFAULT_SCLK_PIN;
+        uint8_t DOUTPin         = DEFAULT_DOUT_PIN;
         uint8_t DINPin          = DEFAULT_DIN_PIN;
         uint8_t CSPin           = DEFAULT_CS_PIN;
         uint32_t clockFrequency = DEFAULT_CLOCK_FREQUENCY;
