@@ -145,6 +145,12 @@ class AD7490{
         */
         void setCoding(uint8_t value);
 
+        /** 
+         * @brief sets the Control Register (CR) bits.
+         * @param seq, pm, shadow, weak, range, coding
+        */
+        void setCR(uint8_t seq, uint8_t pm, uint8_t shadow, uint8_t weak, uint8_t range, uint8_t coding);
+
     private:
         // Variables
         uint8_t SCLKPin         = DEFAULT_SCLK_PIN;

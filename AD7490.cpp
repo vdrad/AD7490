@@ -106,10 +106,10 @@ void AD7490::setCSPin(uint8_t pin) {
 }
 
 void AD7490::setPins(uint8_t sclk, uint8_t dout, uint8_t din, uint8_t cs) {
-    SCLKPin = sclk;
-    DOUTPin = dout;
-    DINPin  = din;
-    CSPin   = cs;
+    setSCLKPin(sclk);
+    setDOUTPin(dout);
+    setDINPin(din);
+    setCSPin(cs);
 }
 
 void AD7490::setClockFrequency(uint32_t frequency) {
@@ -156,6 +156,15 @@ void AD7490::setCoding(uint8_t value) {
         CRCodingValue = value;
         read(0);
     }
+}
+
+void AD7490::setCR(uint8_t seq, uint8_t pm, uint8_t shadow, uint8_t weak, uint8_t range, uint8_t coding) {
+    setSequencer(seq);
+    setPowerMode(pm);
+    setShadow(shadow);
+    setWeak(weak);
+    setRange(range);
+    setCoding(coding);
 }
 
 void AD7490::begin(uint8_t sclk, uint8_t dout, uint8_t din, uint8_t cs) {

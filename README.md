@@ -78,6 +78,24 @@ void setup() {
 }
 ```
 
+You can change (if needed) the Control Register (CR) parameters in two different ways:
+```cpp
+void setup() {
+    ADC.setSequencer(0);
+    ADC.setPowerMode(3);
+    ADC.setShadow(0);
+    ADC.setWeak(1);
+    ADC.setRange(1);
+    ADC.setCoding(1);
+}
+```
+
+```cpp
+void setup() {
+    ADC.setCR(0, 3, 0, 1, 1, 1,);
+}
+```
+
 See 📁examples fore more information.
 
 ### Testing
