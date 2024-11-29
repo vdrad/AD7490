@@ -49,14 +49,14 @@ uint16_t AD7490::generateCommand(uint8_t address) {
     // Uses bitwise operators to assemble the required command to read data from AD7490.
     // For more information on that, read AD74901's datasheet.
     return ((
-        (AD7490_CR_WRITE_VALUE  <<11)   |
-        (AD7490_CR_SEQ_VALUE    <<10)   |
-        ((uint16_t)address      <<6)    |
-        (AD7490_CR_PM_VALUE     <<4)    |
-        (AD7490_CR_SHADOW_VALUE <<3)    |
-        (AD7490_CR_WEAK_VALUE   <<2)    |
-        (AD7490_CR_RANGE_VALUE  <<1)    |
-        (AD7490_CR_CODING_VALUE)
+        (CRWriteValue       <<11)   |
+        (CRSEQValue         <<10)   |
+        ((uint16_t)address  <<6)    |
+        (CRPMValue          <<4)    |
+        (CRShadowValue      <<3)    |
+        (CRWeakValue        <<2)    |
+        (CRRangeValue       <<1)    |
+        (CRCodingValue)
     )<<4);
 }
 
@@ -116,8 +116,50 @@ void AD7490::setClockFrequency(uint32_t frequency) {
     clockFrequency = frequency;
 }
 
+void AD7490::setSequencer(uint8_t value) {
+    if (value <= 1) {
+        CRSEQValue = value;
+        read(0);
+    }
+}
+
+void AD7490::setPowerMode(uint8_t value) {
+    if (value <= 3) {
+        CRPMValue = value;
+        read(0);
+    }
+}
+
+void AD7490::setShadow(uint8_t value) {
+    if (value <= 1) {
+        CRShadowValue = value;
+        read(0);
+    }
+}
+
+void AD7490::setWeak(uint8_t value) {
+    if (value <= 1) {
+        CRWeakValue = value;
+        read(0);
+    }
+}
+
+void AD7490::setRange(uint8_t value) {
+    if (value <= 1) {
+        CRRangeValue = value;
+        read(0);
+    }
+}
+
+void AD7490::setCoding(uint8_t value) {
+    if (value <= 1) {
+        CRCodingValue = value;
+        read(0);
+    }
+}
+
 void AD7490::begin(uint8_t sclk, uint8_t dout, uint8_t din, uint8_t cs) {
-    setAllPins(
+    setPins(
         sclk,
         dout,
         din,
@@ -128,7 +170,7 @@ void AD7490::begin(uint8_t sclk, uint8_t dout, uint8_t din, uint8_t cs) {
 }
 
 void AD7490::begin(uint8_t sclk, uint8_t dout, uint8_t din, uint8_t cs, uint32_t frequency) {
-    setAllPins(
+    setPins(
         sclk,
         dout,
         din,

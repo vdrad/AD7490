@@ -24,13 +24,13 @@
 #define DEFAULT_CS_PIN      39
 
 // AD7490 CONTROL REGISTER (CR)
-#define AD7490_CR_WRITE_VALUE  1
-#define AD7490_CR_SEQ_VALUE    0
-#define AD7490_CR_PM_VALUE     3
-#define AD7490_CR_SHADOW_VALUE 0
-#define AD7490_CR_WEAK_VALUE   1
-#define AD7490_CR_RANGE_VALUE  1
-#define AD7490_CR_CODING_VALUE 1
+#define DEFAULT_AD7490_CR_WRITE_VALUE  1
+#define DEFAULT_AD7490_CR_SEQ_VALUE    0
+#define DEFAULT_AD7490_CR_PM_VALUE     3
+#define DEFAULT_AD7490_CR_SHADOW_VALUE 0
+#define DEFAULT_AD7490_CR_WEAK_VALUE   1
+#define DEFAULT_AD7490_CR_RANGE_VALUE  1
+#define DEFAULT_AD7490_CR_CODING_VALUE 1
 
 /* AD7490 CLASS*/
 class AD7490{
@@ -109,6 +109,42 @@ class AD7490{
         */
         void setClockFrequency(uint32_t frequency);
 
+        /** 
+         * @brief sets the Sequencer (SEQ) bit of the Control Register (CR).
+         * @param value
+        */
+        void setSequencer(uint8_t value);
+
+        /** 
+         * @brief sets the Power Mode (PM) bit of the Control Register (CR).
+         * @param value
+        */
+        void setPowerMode(uint8_t value);
+
+        /** 
+         * @brief sets the Power Mode (PM) of AD7490.
+         * @param value
+        */
+        void setShadow(uint8_t value);
+
+        /** 
+         * @brief sets the Weak bit of the Control Register (CR).
+         * @param value
+        */
+        void setWeak(uint8_t value);
+
+        /** 
+         * @brief sets the Range of AD7490.
+         * @param value
+        */
+        void setRange(uint8_t value);
+
+        /** 
+         * @brief sets the Coding bit of the Control Register (CR).
+         * @param value
+        */
+        void setCoding(uint8_t value);
+
     private:
         // Variables
         uint8_t SCLKPin         = DEFAULT_SCLK_PIN;
@@ -116,6 +152,13 @@ class AD7490{
         uint8_t DINPin          = DEFAULT_DIN_PIN;
         uint8_t CSPin           = DEFAULT_CS_PIN;
         uint32_t clockFrequency = DEFAULT_CLOCK_FREQUENCY;
+        uint8_t  CRWriteValue   = DEFAULT_AD7490_CR_WRITE_VALUE;
+        uint8_t  CRSEQValue     = DEFAULT_AD7490_CR_SEQ_VALUE;
+        uint8_t  CRPMValue      = DEFAULT_AD7490_CR_PM_VALUE;
+        uint8_t  CRShadowValue  = DEFAULT_AD7490_CR_SHADOW_VALUE;
+        uint8_t  CRWeakValue    = DEFAULT_AD7490_CR_WEAK_VALUE;
+        uint8_t  CRRangeValue   = DEFAULT_AD7490_CR_RANGE_VALUE;
+        uint8_t  CRCodingValue  = DEFAULT_AD7490_CR_CODING_VALUE;
 
         // Functions
         /** 
